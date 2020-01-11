@@ -9,6 +9,7 @@ namespace WebApplication1.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Produces("application/json")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -23,6 +24,10 @@ namespace WebApplication1.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Get weather Data
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
